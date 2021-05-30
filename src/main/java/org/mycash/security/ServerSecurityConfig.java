@@ -57,6 +57,7 @@ public class ServerSecurityConfig extends WebSecurityConfigurerAdapter {
 			.authorizeRequests()
 			.antMatchers("/mycash/api/lancamento/**").hasAnyAuthority("ADMIN", "USER")
 			.antMatchers("/mycash/api/**").authenticated()
+			.antMatchers("/h2-console/**").permitAll()
 			.anyRequest().authenticated()
 		.and()
 			.exceptionHandling()
